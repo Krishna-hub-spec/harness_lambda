@@ -1,4 +1,5 @@
 import unittest
+import json  # Add this import
 from main import lambda_handler
 
 class TestHelloWorldFunction(unittest.TestCase):

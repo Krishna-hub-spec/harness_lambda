@@ -113,7 +113,7 @@ pipeline:
 
                       # Step 1: Ensure Python environment is set up (optional if not already available)
                       python3 -m venv .venv
-                      source .venv/bin/activate
+                      . .venv/bin/activate  # Use dot instead of source for compatibility
 
                       # Step 2: Create a deployment package directory
                       mkdir -p lambda_package

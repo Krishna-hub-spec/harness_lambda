@@ -102,6 +102,34 @@ pipeline:
                           args: {}
                         mode: orchestration
                         config: default
+              - step:
+                  type: Run
+                  name: Zip package
+                  identifier: Zip_package
+                  spec:
+                    shell: Sh
+                    command: |-
+                      #!/bin/bash
+
+                      # Step 1: Ensure Python environment is set up (optional if not already available)
+                      python3 -m venv .venv
+                      source .venv/bin/activate
+
+                      # Step 2: Create a deployment package directory
+                      mkdir -p lambda_package
+                      cp main.py lambda_package/
+
+                      # Step 3: Install dependencies into the package directory
+                      pip install -r requirements.txt -t lambda_package/
+
+                      # Step 4: Create the ZIP file
+                      cd lambda_package
+                      zip -r ../lambda_function.zip .
+                      cd ..
+
+                      # Cleanup
+                      rm -rf lambda_package
+                      echo "Lambda function packaged as lambda_function.zip"
           platform:
             os: Linux
             arch: Amd64

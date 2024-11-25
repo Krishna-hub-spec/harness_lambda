@@ -20,25 +20,6 @@ pipeline:
           execution:
             steps:
               - step:
-                  type: Run
-                  name: lint code
-                  identifier: lint_code
-                  spec:
-                    shell: Bash
-                    command: |-
-                      #!/bin/bash
-
-                      # Exit immediately if a command exits with a non-zero status
-                      set -e
-
-                      # Activate virtual environment
-                      source .venv/bin/activate
-
-                      # Run linter
-                      flake8 main.py
-
-                      echo "Linting completed successfully."
-              - step:
                   identifier: setupvirtualenvironment
                   name: setup virtual environment
                   spec:

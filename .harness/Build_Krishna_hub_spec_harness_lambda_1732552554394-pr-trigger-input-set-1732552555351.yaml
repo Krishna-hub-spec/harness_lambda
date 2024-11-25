@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_Krishna_hub_spec_harness_lambda_1732552554394-pr-trigger-input-set
+  identifier: Build_Krishna_hub_spec_harness_lambda_1732552554394prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_Krishna_hub_spec_harness_lambda_1732552554394
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>

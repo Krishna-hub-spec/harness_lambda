@@ -1,3 +1,5 @@
+import json
+
 def lambda_handler(event, context):
     if event.get("queryStringParameters") and "message" in event["queryStringParameters"]:
         return {

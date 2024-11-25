@@ -130,6 +130,14 @@ pipeline:
                       # Cleanup
                       rm -rf lambda_package
                       echo "Lambda function packaged as lambda_function.zip"
+              - step:
+                  type: ArtifactoryUpload
+                  name: ArtifactoryUpload_1
+                  identifier: ArtifactoryUpload_1
+                  spec:
+                    connectorRef: harnessjfrog
+                    target: lambda-function.zip
+                    sourcePath: lambda-generic-local
           platform:
             os: Linux
             arch: Amd64

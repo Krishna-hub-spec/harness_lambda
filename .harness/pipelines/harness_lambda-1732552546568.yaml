@@ -30,6 +30,15 @@ pipeline:
                       python3 -m pip install -e .
                   timeout: ""
                   type: Run
+              - step:
+                  type: Run
+                  name: Install Dependencies
+                  identifier: Install_Dependencies
+                  spec:
+                    shell: Sh
+                    command: |-
+                      python3 -m pip install -r requirements.txt
+                      python3 -m pip install -e .
           platform:
             os: Linux
             arch: Amd64

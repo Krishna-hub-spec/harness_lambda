@@ -130,6 +130,8 @@ pipeline:
                       # Cleanup
                       rm -rf lambda_package
                       echo "Lambda function packaged as lambda_function.zip"
+
+                      ls -al
               - step:
                   type: ArtifactoryUpload
                   name: ArtifactoryUpload_1

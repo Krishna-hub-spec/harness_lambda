@@ -138,8 +138,8 @@ pipeline:
                   identifier: ArtifactoryUpload_1
                   spec:
                     connectorRef: harnessjfrog
-                    target: lambda_function.zip
-                    sourcePath: lambda-generic-local/lambda_function.zip
+                    target: lambda-generic-local/lambda_function.zip
+                    sourcePath: lambda_function.zip
           platform:
             os: Linux
             arch: Amd64
